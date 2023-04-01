@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 
@@ -37,14 +37,14 @@ export default function BookingPage() {
   axios.defaults.withCredentials = true;
   useEffect(() => {
     axios
-      .get(`https://temp-production-7bab.up.railway.app/api/guide/${guideId}`)
-      .then((response) => {
-        const data = response.data;
-        setGuide(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    .get(`https://temp-production-7bab.up.railway.app/api/guide/${guideId}`)
+    .then((response) => {
+      const data = response.data;
+      setGuide(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }, [guideId]);
   console.log(guide);
   return (

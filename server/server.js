@@ -121,12 +121,3 @@ app.get("/api/guides/:city", async (req,res) => {
 })
 
 app.listen(5000,console.log("server running"));
-ngrok.connect({
-  proto : 'http',
-  addr : process.env.PORT,
-}, (err, url) => {
-  if (err) {
-      console.error('Error while connecting Ngrok',err);
-      return new Error('Ngrok Failed');
-  }
-});
